@@ -1,3 +1,4 @@
+package com.fc.api.mc.impl;
 
 import com.fc.api.mc.McResult;
 import com.fc.api.mc.bo.McParams;

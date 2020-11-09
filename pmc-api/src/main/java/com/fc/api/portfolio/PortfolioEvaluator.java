@@ -14,7 +14,7 @@ public interface PortfolioEvaluator {
     <T> T evaluate(
             @NotNull SecurityContext securityContext,
             @NotNull PeParams params,
-            @NotNull Function<PeResult, T> mapper
+            @NotNull Function<PortfolioEvaluationResult, T> mapper
     );
 
 }

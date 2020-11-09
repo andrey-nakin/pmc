@@ -1,4 +1,4 @@
-package com.fc.pmc.api.mc.impl;
+package com.fc.api.mc.impl;
 
 import com.fc.api.mc.Mc;
 import com.fc.api.mc.McResult;
