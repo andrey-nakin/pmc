@@ -1,7 +1,5 @@
-package com.fc.api.mc;
+package com.fc.api.portfolio.bo;
 
-import com.fc.api.mc.bo.McParams;
-import com.fc.api.mc.bo.McResult;
 import com.fc.api.security.SecurityContext;
 import javax.validation.constraints.NotNull;
 
@@ -9,12 +7,13 @@ import javax.validation.constraints.NotNull;
  *
  * @author Andrey Nakin
  */
-public interface Mc {
+public interface PortfolioEvaluator {
 
     @NotNull
-    McResult build(
+    PeResult evaluate(
             @NotNull SecurityContext securityContext,
-            @NotNull McParams params
+            @NotNull Portfolio portfolio,
+            @NotNull PeParams params
     );
 
 }
