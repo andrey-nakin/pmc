@@ -16,7 +16,7 @@ public interface PortfolioValues {
      * @param time moment of time
      * @return asset value at the given moment.
      */
-    double assetFloorValue(
+    double assetValue(
             @NotNull Object assetId,
             @NotNull Instant time
     );

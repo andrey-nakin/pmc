@@ -1,7 +1,9 @@
 package com.fc.api.mc.bo;
 
 import com.fc.api.portfolio.bo.Portfolio;
+import java.time.Instant;
 import java.time.Period;
+import java.time.temporal.ValueRange;
 import java.util.Objects;
 import javax.validation.constraints.NotNull;
 
@@ -19,10 +21,14 @@ public class McParamsBuilder {
         result = new McParams();
 
         result.setValuePeriod(Period.ofYears(DEF_VALUE_PERIOD_IN_YEARS));
+        result.setStartTime(Instant.now());
     }
 
     @NotNull
     public McParams build() {
+        if (result.getEndTime() == null) {
+            throw new IllegalStateException("End time is not set");
+        }
         return result;
     }
 
@@ -39,6 +45,32 @@ public class McParamsBuilder {
             @NotNull final Period period
     ) {
         result.setValuePeriod(Objects.requireNonNull(period));
+        return this;
+    }
+
+    @NotNull
+    public McParamsBuilder timeHorizon(
+            @NotNull final Instant startTime,
+            @NotNull final Instant endTime
+    ) {
+        if (!Objects.requireNonNull(startTime).isBefore(Objects.requireNonNull(endTime))) {
+            throw new IllegalArgumentException("start time must be before end time");
+        }
+        result.setStartTime(startTime);
+        result.setEndTime(endTime);
+        return this;
+    }
+
+    @NotNull
+    public McParamsBuilder observationTimeHorizon(
+            @NotNull final Instant startTime,
+            @NotNull final Instant endTime
+    ) {
+        if (!Objects.requireNonNull(startTime).isBefore(Objects.requireNonNull(endTime))) {
+            throw new IllegalArgumentException("start time must be before end time");
+        }
+        result.setObservationStartTime(startTime);
+        result.setObservationEndTime(endTime);
         return this;
     }
 
