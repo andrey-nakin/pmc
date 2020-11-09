@@ -19,7 +19,7 @@ public class PortfolioEvaluatorImpl implements PortfolioEvaluator {
             @NotNull final PeParams params,
             @NotNull final Function<PortfolioEvaluationResult, T> mapper
     ) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return mapper.apply(new PortfolioEvaluationResultImpl(params));
     }
 
 }
