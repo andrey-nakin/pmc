@@ -1,4 +1,4 @@
-package com.fc.api.portfolio.bo;
+package com.fc.api.portfolio;
 
 /**
  *

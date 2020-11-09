@@ -9,6 +9,13 @@ import javax.validation.constraints.NotNull;
  */
 public interface PortfolioValues {
 
+    /**
+     * Asset value at very moment.
+     *
+     * @param assetId asset ID
+     * @param time moment of time
+     * @return asset value at the given moment.
+     */
     double assetFloorValue(
             @NotNull Object assetId,
             @NotNull Instant time

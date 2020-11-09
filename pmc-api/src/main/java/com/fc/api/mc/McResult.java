@@ -1,4 +1,4 @@
-package com.fc.api.mc.bo;
+package com.fc.api.mc;
 
 /**
  *

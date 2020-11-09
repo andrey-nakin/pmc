@@ -1,8 +1,8 @@
 package com.fc.pmc.api.mc.impl;
 
 import com.fc.api.mc.Mc;
+import com.fc.api.mc.McResult;
 import com.fc.api.mc.bo.McParams;
-import com.fc.api.mc.bo.McResult;
 import com.fc.api.security.SecurityContext;
 import javax.validation.constraints.NotNull;
 import org.slf4j.Logger;
