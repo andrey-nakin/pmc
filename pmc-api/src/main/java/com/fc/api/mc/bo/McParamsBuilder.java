@@ -34,4 +34,12 @@ public class McParamsBuilder {
         return this;
     }
 
+    @NotNull
+    public McParamsBuilder valuePeriod(
+            @NotNull final Period period
+    ) {
+        result.setValuePeriod(Objects.requireNonNull(period));
+        return this;
+    }
+
 }
