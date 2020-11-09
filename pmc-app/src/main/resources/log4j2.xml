@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    
+    <Properties>
+        <Property name="pattern.layout">%r %d{ISO8601} %t %-5p %c - %m%n</Property>
+        <Property name="file.size">1000MB</Property>
+        <Property name="file.index.max">5</Property>
+    </Properties>
+    
+    <Appenders>
+        
+        <RollingFile name="DebugAppender" fileName="${sys:catalina.base}/logs/pmc-debug.log" filePattern="${sys:catalina.base}/logs/pmc-debug.log.%i">
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${file.size}"/>
+            </Policies>
+            <DefaultRolloverStrategy max="${file.index.max}"/>
+            <PatternLayout pattern="${pattern.layout}"/>
+        </RollingFile>
+
+        <RollingFile name="InfoAppender" fileName="${sys:catalina.base}/logs/pmc-info.log" filePattern="${sys:catalina.base}/logs/pmc-info.log.%i">
+            <ThresholdFilter level="INFO"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${file.size}"/>
+            </Policies>
+            <DefaultRolloverStrategy max="${file.index.max}"/>
+            <PatternLayout pattern="${pattern.layout}"/>
+        </RollingFile>
+        
+        <RollingFile name="WarnAppender" fileName="${sys:catalina.base}/logs/pmc-warn.log" filePattern="${sys:catalina.base}/logs/pmc-warn.log.%i">
+            <ThresholdFilter level="WARN"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${file.size}"/>
+            </Policies>
+            <DefaultRolloverStrategy max="${file.index.max}"/>
+            <PatternLayout pattern="${pattern.layout}"/>
+        </RollingFile>
+
+        <RollingFile name="ErrorAppender" fileName="${sys:catalina.base}/logs/pmc-error.log" filePattern="${sys:catalina.base}/logs/pmc-error.log.%i">
+            <ThresholdFilter level="ERROR"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${file.size}"/>
+            </Policies>
+            <DefaultRolloverStrategy max="${file.index.max}"/>
+            <PatternLayout pattern="${pattern.layout}"/>
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+        
+        <AsyncLogger name="com.fc" additivity="false" level="TRACE">
+            <AppenderRef ref="DebugAppender"/>
+            <AppenderRef ref="InfoAppender"/>
+            <AppenderRef ref="WarnAppender"/>
+            <AppenderRef ref="ErrorAppender"/>
+        </AsyncLogger>
+
+        <AsyncLogger name="org.hibernate.SQL" additivity="false" level="DEBUG">
+            <AppenderRef ref="DebugAppender"/>
+            <AppenderRef ref="InfoAppender"/>
+            <AppenderRef ref="WarnAppender"/>
+            <AppenderRef ref="ErrorAppender"/>
+        </AsyncLogger>
+
+        <AsyncRoot level="INFO">
+            <AppenderRef ref="DebugAppender"/>
+            <AppenderRef ref="InfoAppender"/>
+            <AppenderRef ref="WarnAppender"/>
+            <AppenderRef ref="ErrorAppender"/>
+        </AsyncRoot>
+        
+    </Loggers>
+    
+</Configuration>
