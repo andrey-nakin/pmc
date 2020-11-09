@@ -1,6 +1,7 @@
 package com.fc.api.mc.bo;
 
 import com.fc.api.portfolio.bo.Portfolio;
+import java.time.Period;
 import java.util.Objects;
 import javax.validation.constraints.NotNull;
 
@@ -10,7 +11,15 @@ import javax.validation.constraints.NotNull;
  */
 public class McParamsBuilder {
 
-    private final McParams result = new McParams();
+    private static final int DEF_VALUE_PERIOD_IN_YEARS = 1;
+
+    private final McParams result;
+
+    public McParamsBuilder() {
+        result = new McParams();
+
+        result.setValuePeriod(Period.ofYears(DEF_VALUE_PERIOD_IN_YEARS));
+    }
 
     @NotNull
     public McParams build() {
