@@ -3,4 +3,5 @@
 /pmc-app/target/
 logs
 start.sh
-
+/pmc-api-impl/target/
+/pmc-dto/target/

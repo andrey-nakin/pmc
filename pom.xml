@@ -14,6 +14,8 @@
     <modules>
         <module>pmc-parent</module>
         <module>pmc-api</module>
+        <module>pmc-api-impl</module>
+        <module>pmc-dto</module>
         <module>pmc-ws</module>
         <module>pmc-app</module>
     </modules>
