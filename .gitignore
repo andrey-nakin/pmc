@@ -2,6 +2,6 @@
 /pmc-ws/target/
 /pmc-app/target/
 logs
-start.sh
+pmc.sh
 /pmc-api-impl/target/
 /pmc-dto/target/
