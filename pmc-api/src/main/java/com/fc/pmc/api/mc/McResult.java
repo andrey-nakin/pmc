@@ -1,6 +1,6 @@
-package com.fc.api.mc;
+package com.fc.pmc.api.mc;
 
-import com.fc.api.mc.bo.McParams;
+import com.fc.pmc.api.mc.bo.McParams;
 import java.time.Instant;
 import java.util.stream.Stream;
 import javax.validation.constraints.NotNull;

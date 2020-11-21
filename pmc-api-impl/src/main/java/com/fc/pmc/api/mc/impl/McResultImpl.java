@@ -1,7 +1,7 @@
-package com.fc.api.mc.impl;
+package com.fc.pmc.api.mc.impl;
 
-import com.fc.api.mc.McResult;
-import com.fc.api.mc.bo.McParams;
+import com.fc.pmc.api.mc.McResult;
+import com.fc.pmc.api.mc.bo.McParams;
 import java.time.Instant;
 import java.util.stream.Stream;
 

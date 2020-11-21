@@ -1,6 +1,6 @@
-package com.fc.api.mc.bo;
+package com.fc.pmc.api.mc.bo;
 
-import com.fc.api.portfolio.bo.Portfolio;
+import com.fc.pmc.api.portfolio.bo.Portfolio;
 import java.time.Instant;
 import java.time.Period;
 

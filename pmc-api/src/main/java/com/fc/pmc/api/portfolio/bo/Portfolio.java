@@ -1,4 +1,4 @@
-package com.fc.api.portfolio.bo;
+package com.fc.pmc.api.portfolio.bo;
 
 import java.util.Collection;
 

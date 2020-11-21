@@ -1,7 +1,7 @@
-package com.fc.api.portfolio.bo;
+package com.fc.pmc.api.portfolio.bo;
 
-import com.fc.api.mc.bo.McParamsBuilder;
-import com.fc.api.portfolio.PortfolioValues;
+import com.fc.pmc.api.mc.bo.McParamsBuilder;
+import com.fc.pmc.api.portfolio.PortfolioValues;
 import java.time.Instant;
 import java.time.Period;
 import java.util.Objects;

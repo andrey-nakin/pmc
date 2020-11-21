@@ -1,4 +1,4 @@
-package com.fc.api.portfolio;
+package com.fc.pmc.api.portfolio;
 
 import java.time.Instant;
 import javax.validation.constraints.NotNull;

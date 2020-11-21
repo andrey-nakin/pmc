@@ -1,6 +1,6 @@
 package com.fc.pmc.ws.mc;
 
-import com.fc.api.mc.Mc;
+import com.fc.pmc.api.mc.Mc;
 import com.fc.pmc.ws.WsApiConstants;
 import com.fc.pmc.ws.WsApiTags;
 import com.fc.pmc.ws.dto.mc.McResultDto;
