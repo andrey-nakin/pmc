@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author andrey
  */
 @RestController
-@RequestMapping("/v1/mc")
+@RequestMapping("/api/v1/mc")
 public class McEndpoint {
 
     private final Mc mc;
