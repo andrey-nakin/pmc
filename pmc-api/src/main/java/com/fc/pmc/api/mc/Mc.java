@@ -17,4 +17,10 @@ public interface Mc {
             @NotNull Function<McResult, T> mapper
     );
 
+    <T> T build2(
+            @NotNull SecurityContext securityContext,
+            @NotNull McParams params,
+            @NotNull Function<McResult, T> mapper
+    );
+
 }
