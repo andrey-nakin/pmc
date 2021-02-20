@@ -18,8 +18,8 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Andrey Nakin
  */
 @Service
-@Scope(proxyMode = ScopedProxyMode.DEFAULT)
-final public class McImpl implements Mc {
+@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
+public class McImpl implements Mc {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
