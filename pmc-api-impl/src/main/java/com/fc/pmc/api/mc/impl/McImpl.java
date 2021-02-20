@@ -11,19 +11,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author Andrey Nakin
  */
 @Service
-@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
+@Scope(proxyMode = ScopedProxyMode.DEFAULT)
 public class McImpl implements Mc {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Transactional
     @Override
     public <T> T build(
             @NotNull final SecurityContext securityContext,
@@ -34,7 +32,6 @@ public class McImpl implements Mc {
         return build2(securityContext, params, mapper);
     }
 
-    @Transactional
     @Override
     public <T> T build2(
             @NotNull final SecurityContext securityContext,
